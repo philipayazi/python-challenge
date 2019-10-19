@@ -40,13 +40,17 @@ print('Greatest Increase in Profits: ' + str(maxDate) + ' ($' + str(maxIncome) +
 print('Greatest Decrease in Profits: ' + str(minDate) + ' ($' + str(minIncome) + ')')
 
 output_file = os.path.join("PyBank.txt")
-with open(output_file, "w", newline="") as datafile:
-    writer = csv.writer(datafile)
+with open(output_file, "w") as datafile:
 
-    writer.writerow('Financial Analysis')
-    writer.writerow(breaker)
-    writer.writerow('Total Months: ' + str(totalMonths))
-    writer.writerow('Total: ' + '$' + str(netTotal))
-    writer.writerow('Average Change: ' + '$' + str(avgChange))
-    writer.writerow('Greatest Increase in Profits: ' + str(maxDate) + ' ($' + str(maxIncome) + ')')
-    writer.writerow('Greatest Decrease in Profits: ' + str(minDate) + ' ($' + str(minIncome) + ')')
+    datafile.write("Financial Analysis\n")
+    datafile.write(breaker)
+    datafile.write("\n")
+    datafile.write('Total Months: ' + str(totalMonths))
+    datafile.write("\n")
+    datafile.write('Total: ' + '$' + str(netTotal))
+    datafile.write("\n")
+    datafile.write('Average Change: ' + '$' + str(avgChange))
+    datafile.write("\n")
+    datafile.write('Greatest Increase in Profits: ' + str(maxDate) + ' ($' + str(maxIncome) + ')')
+    datafile.write("\n")
+    datafile.write('Greatest Decrease in Profits: ' + str(minDate) + ' ($' + str(minIncome) + ')')
